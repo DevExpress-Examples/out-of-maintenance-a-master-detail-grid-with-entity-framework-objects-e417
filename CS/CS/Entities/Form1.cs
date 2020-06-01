@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace Entities {
     public partial class Form1 : Form {
@@ -21,7 +22,8 @@ namespace Entities {
         }
 
         private void gridView1_MasterRowEmpty(object sender, DevExpress.XtraGrid.Views.Grid.MasterRowEmptyEventArgs e) {
-            Customers c = (Customers)gridView1.GetRow(e.RowHandle);
+            GridView view = sender as GridView;
+            Customers c = (Customers)view.GetRow(e.RowHandle);
             e.IsEmpty = c.Orders.Count == 0;
         }
 
@@ -34,8 +36,9 @@ namespace Entities {
         }
 
         private void gridView1_MasterRowGetChildList(object sender, DevExpress.XtraGrid.Views.Grid.MasterRowGetChildListEventArgs e) {
-            Customers c = (Customers)gridView1.GetRow(e.RowHandle);
-            e.ChildList = new BindingSource(c, "Orders");
+            GridView view = sender as GridView;
+            Customers c = (Customers)view.GetRow(e.RowHandle);
+            e.ChildList = c.Orders.ToList();
         }
     }
 }
