@@ -1,4 +1,11 @@
-﻿Namespace Entities
+﻿'====================================================================================================
+'The Free Edition of Instant VB limits conversion output to 100 lines per file.
+
+'To subscribe to the Premium Edition, visit our website:
+'https://www.tangiblesoftwaresolutions.com/order/order-instant-vb.html
+'====================================================================================================
+
+Namespace Entities
     Partial Public Class Form1
         ''' <summary>
         ''' Required designer variable.
@@ -39,9 +46,9 @@
             Me.colPhone = New DevExpress.XtraGrid.Columns.GridColumn()
             Me.colPostalCode = New DevExpress.XtraGrid.Columns.GridColumn()
             Me.colRegion = New DevExpress.XtraGrid.Columns.GridColumn()
-            DirectCast(Me.gridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.gridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            DirectCast(Me.gridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.gridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType(Me.gridView1, System.ComponentModel.ISupportInitialize).BeginInit()
             Me.SuspendLayout()
             ' 
             ' gridView2
@@ -155,40 +162,10 @@
             Me.colRegion.Caption = "Region"
             Me.colRegion.FieldName = "Region"
             Me.colRegion.Name = "colRegion"
-            Me.colRegion.Visible = True
-            Me.colRegion.VisibleIndex = 10
-            ' 
-            ' Form1
-            ' 
-            Me.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)
-            Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-            Me.ClientSize = New System.Drawing.Size(878, 499)
-            Me.Controls.Add(Me.gridControl1)
-            Me.Name = "Form1"
-            Me.Text = "Form1"
-            DirectCast(Me.gridView2, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.gridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            DirectCast(Me.gridView1, System.ComponentModel.ISupportInitialize).EndInit()
-            Me.ResumeLayout(False)
 
-        End Sub
+'====================================================================================================
+'End of the allowed output for the Free Edition of Instant VB.
 
-        #End Region
-
-        Private gridControl1 As DevExpress.XtraGrid.GridControl
-        Private WithEvents gridView1 As DevExpress.XtraGrid.Views.Grid.GridView
-        Private colAddress As DevExpress.XtraGrid.Columns.GridColumn
-        Private colCity As DevExpress.XtraGrid.Columns.GridColumn
-        Private colCompanyName As DevExpress.XtraGrid.Columns.GridColumn
-        Private colContactName As DevExpress.XtraGrid.Columns.GridColumn
-        Private colContactTitle As DevExpress.XtraGrid.Columns.GridColumn
-        Private colCountry As DevExpress.XtraGrid.Columns.GridColumn
-        Private colCustomerID As DevExpress.XtraGrid.Columns.GridColumn
-        Private colFax As DevExpress.XtraGrid.Columns.GridColumn
-        Private colPhone As DevExpress.XtraGrid.Columns.GridColumn
-        Private colPostalCode As DevExpress.XtraGrid.Columns.GridColumn
-        Private colRegion As DevExpress.XtraGrid.Columns.GridColumn
-        Private gridView2 As DevExpress.XtraGrid.Views.Grid.GridView
-    End Class
-End Namespace
-
+'To subscribe to the Premium Edition, visit our website:
+'https://www.tangiblesoftwaresolutions.com/order/order-instant-vb.html
+'====================================================================================================

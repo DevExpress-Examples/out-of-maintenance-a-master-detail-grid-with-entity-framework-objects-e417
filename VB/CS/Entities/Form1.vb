@@ -8,6 +8,7 @@ Imports System.Text
 Imports System.Windows.Forms
 Imports System.Data.Objects
 Imports System.Data.Objects.DataClasses
+Imports DevExpress.XtraGrid.Views.Grid
 
 Namespace Entities
     Partial Public Class Form1
@@ -23,7 +24,8 @@ Namespace Entities
         End Sub
 
         Private Sub gridView1_MasterRowEmpty(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Grid.MasterRowEmptyEventArgs) Handles gridView1.MasterRowEmpty
-            Dim c As Customers = CType(gridView1.GetRow(e.RowHandle), Customers)
+            Dim view As GridView = TryCast(sender, GridView)
+            Dim c As Customers = DirectCast(view.GetRow(e.RowHandle), Customers)
             e.IsEmpty = c.Orders.Count = 0
         End Sub
 
@@ -36,8 +38,9 @@ Namespace Entities
         End Sub
 
         Private Sub gridView1_MasterRowGetChildList(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Grid.MasterRowGetChildListEventArgs) Handles gridView1.MasterRowGetChildList
-            Dim c As Customers = CType(gridView1.GetRow(e.RowHandle), Customers)
-            e.ChildList = New BindingSource(c, "Orders")
+            Dim view As GridView = TryCast(sender, GridView)
+            Dim c As Customers = DirectCast(view.GetRow(e.RowHandle), Customers)
+            e.ChildList = c.Orders.ToList()
         End Sub
     End Class
 End Namespace

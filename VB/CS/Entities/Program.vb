@@ -12,7 +12,7 @@ Namespace Entities
         ''' <summary>
         ''' The main entry point for the application.
         ''' </summary>
-        <STAThread> _
+        <STAThread>
         Shared Sub Main()
             Application.EnableVisualStyles()
             Application.SetCompatibleTextRenderingDefault(False)
