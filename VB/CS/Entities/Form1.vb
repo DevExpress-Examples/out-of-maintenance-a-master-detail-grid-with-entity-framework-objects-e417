@@ -8,6 +8,7 @@ Imports System.Text
 Imports System.Windows.Forms
 Imports System.Data.Objects
 Imports System.Data.Objects.DataClasses
+Imports NorthwindModel
 
 Namespace Entities
     Partial Public Class Form1
